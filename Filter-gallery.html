@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterable-gallery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+           
+        }
+        nav{
+            background: linear-gradient(135deg,rgb(78, 187, 187,0.4),rgb(43, 43, 43,0.5)), url(/photo-1615557683516-5d19828128c8.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(8px);
+            margin: 30px;
+        }
+        .products  {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        
+
+     
+        }
+        .products .itembox{
+            padding: 5px;
+            margin: 1px;
+            overflow: hidden;
+          
+
+
+        }
+        .products .itembox img{
+            height: 190px;
+            margin-bottom: 10px;
+            width: 190px;
+        }
+    
+        .products{
+            margin-bottom: 60px;
+
+        }
+        .navigation ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            backdrop-filter: blur(8px);
+
+
+
+        }
+        .navigation ul li{
+            list-style: none;
+            color: black;
+            background: linear-gradient(135deg,rgba(45, 134, 134, 0.3),rgb(255, 255, 255,0.4));
+            box-shadow: 2px 2px 2px 2px white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 4px;
+            border: white solid 0.1px;
+            flex-wrap: wrap;
+
+        }
+        .navigation ul li{
+            color: white;
+            text-shadow: 1px 1px 1px rgb(0, 0, 0);
+
+        }
+        .navigation ul li:hover{
+            transform: translateY(-5px);
+            backdrop-filter: blur(1px);
+          background: linear-gradient(135deg,rgba(0, 238, 238, 0.1),rgb(255, 255, 255,0.1));
+
+            
+
+        }
+    
+         section ul .active{
+            color: rgba(0, 0, 0, );
+          background: linear-gradient(135deg,rgba(0, 238, 238, 0.9),rgb(255, 255, 255,0.5));
+        }
+
+        .itembox::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: skew(45deg) translatex(150px);
+            transition: 0.5s;
+            
+        }
+        .itembox:hover:before{
+            transform: skew(45deg) translatex(-150px);
+            transition: 0.5s;
+            
+
+        }
+    
+    </style>
+</head>
+<body>
+    <section>
+    <nav class="navigation">
+        <ul>
+            
+            <li class="list active al" data-filter="ALL"> ALL</li>
+            <li class="list mb" data-filter="MOBILE"> MOBILE</li>
+            <li class="list lp " data-filter="LAPTOP"> LAPTOP</li>
+            <li class="list hp " data-filter="HEADPHONE"> HEADPHONE</li>
+            <li class="list wt" data-filter="WATCH"> WATCH</li>
+        </ul>
+    </nav>
+    </section>
+
+    <div class="products">
+        <div data-aos="zoom-in"  class="itembox MOBILE" ><img src="/mobile3.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox LAPTOP"><img src="/lp1.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox HEADPHONE"><img src="/hp1.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox WATCH"><img src="/wt1.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox MOBILE"><img src="/mobile2.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox LAPTOP"><img src="/lp2.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox HEADPHONE"><img src="/hp2.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox WATCH"><img src="/wt2.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox MOBILE"><img src="/mobile1.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox LAPTOP"><img src="/lp3.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox HEADPHONE"><img src="/hp6.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox WATCH"><img src="/wt3.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox MOBILE"><img src="/mobile4.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox LAPTOP"><img src="/lp4.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox HEADPHONE"><img src="/hp3.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox WATCH"><img src="/wt4.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox MOBILE"><img src="/mobile5.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox LAPTOP"><img src="/lp5.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox HEADPHONE"><img src="/hp4.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox WATCH"><img src="/wt5.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox MOBILE"><img src="/mobile6.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox LAPTOP"><img src="/lp1.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox HEADPHONE"><img src="/hp5.jpg"/></div>
+        <div data-aos="zoom-in" class="itembox WATCH"><img src="/wt6.jpg"/></div>
+       
+    </div>
+ 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $(".mb").click(function(){
+                $(".LAPTOP img").css("display","none")
+                $(".WATCH img").css("display","none")
+                $(".HEADPHONE img").css("display","none")
+                $(".MOBILE img").css("display","flex")
+                $(this).addClass("active")
+                $(".wt, .hp, .al, .lp").removeClass("active")
+
+            })
+            $(".lp").click(function(){
+                $(".MOBILE img").css("display","none")
+                $(".WATCH img").css("display","none")
+                $(".HEADPHONE img").css("display","none")
+                $(".LAPTOP img").css("display","flex")
+                $(this).addClass("active")
+                $(".wt, .hp, .al, .mb").removeClass("active")
+
+
+
+            })
+            $(".hp").click(function(){
+                $(".LAPTOP img").css("display","none")
+                $(".WATCH img").css("display","none")
+                $(".MOBILE img").css("display","none")
+                $(".HEADPHONE img").css("display","flex")
+                $(this).addClass("active")
+                $(".wt, .mb, .al, .lp").removeClass("active")
+            })
+            $(".al").click(function(){
+                $(".LAPTOP img").css("display","flex")
+                $(".WATCH img").css("display","flex")
+                $(".HEADPHONE img").css("display","flex")
+                $(".MOBILE img").css("display","flex")
+                $(this).addClass("active")
+                $(".wt, .hp, .mb, .lp").removeClass("active")
+
+            })
+
+            $(".wt").click(function(){
+                $(".LAPTOP img").css("display","none")
+                $(".MOBILE img").css("display","none")
+                $(".HEADPHONE img").css("display","none")
+                $(".WATCH img").css("display","flex")
+
+                $(this).addClass("active")
+                $(".mb, .hp, .al, .lp").removeClass("active")
+
+            })
+
+     
+
+           
+        })
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
